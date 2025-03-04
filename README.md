@@ -129,3 +129,42 @@ blockchain-todo-app/
 - **Security**: Ensure environment variables and sensitive data are secured.
 
 ---
+
+## Flow of the Blockchain To-Do List Application
+
+### 1️⃣ Initialization
+- The application initializes with backend and frontend components.
+- The Node.js backend sets up an Express server and loads configuration settings from environment variables (.env).
+- The React frontend connects to the backend for real-time interaction with the blockchain.
+
+### 2️⃣ Blockchain Smart Contract Interaction
+- The backend interacts with a pre-deployed Ethereum smart contract on the Sepolia Testnet.
+- The smart contract manages task creation, retrieval, and completion, ensuring transparency and security.
+- The ABI (Application Binary Interface) is fetched dynamically from GitHub for seamless interaction with the contract.
+
+### 3️⃣ Task Management & Storage
+- Users can add, view, and complete tasks through the UI.
+- Task data is stored on the blockchain, making it immutable and publicly verifiable.
+- Each task has a unique ID, description, and completion status.
+
+### 4️⃣ Transaction Processing & Confirmation
+- When a task is added or completed, a blockchain transaction is triggered.
+- The transaction is signed using the user's private key and sent to the Ethereum network.
+- The frontend provides real-time transaction feedback, including:
+  - "Transaction Pending" status while awaiting confirmation.
+  - Success messages when transactions are finalized.
+
+### 5️⃣ API Layer & Communication
+- The backend exposes REST API endpoints (`GET /tasks`, `POST /tasks`, `POST /tasks/:id/complete`) for frontend interaction.
+- Rate-limiting and input validation ensure security and prevent spam transactions.
+- The frontend fetches blockchain-stored tasks dynamically and updates in real-time.
+
+### 6️⃣ User Experience & UI Feedback
+- A modern, Wix-inspired UI provides a clean and intuitive task management experience.
+- The application uses loading indicators, animations, and success toasts for smooth UX.
+- Task actions (adding/completing) instantly reflect blockchain changes for real-time updates.
+
+### 7️⃣ Security & Best Practices
+- All sensitive credentials (RPC URL, private key) are stored securely in environment variables.
+- Pino logging captures important backend events and errors.
+- Smart contract transactions cannot be altered, ensuring trustless operation.
