@@ -12,7 +12,7 @@ const PageContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(120deg, #e1e9f0, #c7d8f0); /* Gradient like Fireblocks */
+  background: linear-gradient(120deg, #e1e9f0, #c7d8f0);
   font-family: "Arial", sans-serif;
   padding: 20px;
 `;
@@ -32,11 +32,22 @@ const LeftContainer = styled.div`
 
 const RightContainer = styled.div`
   width: 45%;
-  background-color: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.25); /* Slightly increased transparency */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
 `;
+
+
 
 const Title = styled.h1`
   font-size: 26px;
@@ -71,18 +82,23 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  background: #6200ea;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
-  padding: 10px 15px;
+  padding: 12px 18px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 3px 15px rgba(106, 17, 203, 0.3);
+
   &:hover {
-    background: #4a00b4;
+    box-shadow: 0 5px 20px rgba(106, 17, 203, 0.5);
+    transform: scale(1.05);
   }
 `;
+
+
 
 const TaskList = styled.ul`
   list-style: none;
@@ -112,9 +128,16 @@ const CompleteButton = styled(Button)`
 
 const TaskText = styled.span<{ completed: boolean }>`
   text-decoration: ${({ completed }) => (completed ? "line-through" : "none")};
-  color: ${({ completed }) => (completed ? "#888" : "#333")};
+  color: ${({ completed }) => (completed ? "#888" : "#222")};
   font-size: 16px;
+  transition: 0.3s;
+
+  ${({ completed }) =>
+    completed &&
+    `text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15); /* Improves readability */
+    opacity: 0.8;`}
 `;
+
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -203,7 +226,7 @@ const App: React.FC = () => {
 
         {/* Right Todo List */}
         <RightContainer>
-          <Title>Blockchain TODO List</Title>
+          <Title>My Account</Title>
 
           {/* Add Task Feedback */}
           {addingTask && <TaskLoading initial={{ opacity: 0 }} animate={{ opacity: 1 }}>Adding Task...</TaskLoading>}
