@@ -2,7 +2,7 @@
 
 **The simplest and most secure way to work with digital assets.**
 
-![Client Website Screenshot](frontend\App_Image.png)
+![Client Website Screenshot](https://github.com/user-attachments/assets/11f0e7c7-b21f-422a-affa-345f94c964d2)
 
 ## Table of Contents
 
