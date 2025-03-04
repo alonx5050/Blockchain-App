@@ -2,7 +2,7 @@
 
 **The simplest and most secure way to work with digital assets.**
 
-![Client Website Screenshot](C:\Users\alonw\Desktop\Blockchain-App\frontend\App_Image.png)
+![Client Website Screenshot](frontend\App_Image.png)
 
 ## Table of Contents
 
