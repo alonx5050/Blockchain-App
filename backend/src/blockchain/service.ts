@@ -30,7 +30,7 @@ async function fetchABI(): Promise<any> {
 export class BlockchainService {
     private static contract: ethers.Contract | null = null;
 
-    static async init() {
+    static async init() { // ensures the contract is only initialized when needed.
         try {
             const abi = await fetchABI();
             const provider = new ethers.JsonRpcProvider(RPC_URL);

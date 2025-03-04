@@ -1,13 +1,16 @@
-import dotenv from "dotenv";
 import { BlockchainService } from "./blockchain/service";
-
+import dotenv from "dotenv";
 
 dotenv.config();
-// Function to test the blockchain service
+
 async function testBlockchainService() {
     try {
         console.log("Initializing Blockchain Service...");
         await BlockchainService.init();
+
+        console.log("Adding a test task...");
+        const txHash = await BlockchainService.addTask("Buy groceries");
+        console.log("Transaction Hash:", txHash);
 
         console.log("Fetching tasks from the blockchain...");
         const tasks = await BlockchainService.getTasks();
@@ -18,5 +21,4 @@ async function testBlockchainService() {
     }
 }
 
-// Run the test
 testBlockchainService();
