@@ -27,14 +27,7 @@ This Blockchain To-Do List Application provides a seamless and secure way to man
 
 - **Task Management**: Add, view, and complete tasks with ease.
 - **Blockchain Integration**: Each task is securely stored and managed on the blockchain.
-- **Responsive UI**: Modern and intuitive interface inspired by leading design practices.
 - **Transaction Feedback**: Real-time feedback on blockchain transactions with loading indicators and success messages.
-
-## Demo Video
-
-[![Watch the video](path_to_video_thumbnail.png)](path_to_demo_video.mp4)
-
-*Click the image above to watch a demo of the application in action.*
 
 ## Getting Started
 
@@ -44,7 +37,6 @@ Follow these instructions to set up and run the application on your local machin
 
 - **Node.js**: Ensure you have Node.js installed. [Download Node.js](https://nodejs.org/)
 - **npm**: Node.js package manager, included with Node.js.
-- **Git**: For cloning the repository. [Download Git](https://git-scm.com/)
 
 ### Installation
 
@@ -73,13 +65,19 @@ npm install
 
 ### Backend Configuration:
 
-1. Rename `.env.example` to `.env` in the **backend** directory.
-2. Update the environment variables as needed.
+1. Create a new `.env` file in the **backend** directory.
+2. Add the following environment variables to the `.env` file:
+
+   ```env
+   RPC_URL=your_rpc_url_here
+   PRIVATE_KEY=your_private_key_here
+   ```
+
+3. Replace `your_rpc_url_here` and `your_private_key_here` with the actual values provided upon request.
 
 ### Frontend Configuration:
 
-1. Rename `.env.example` to `.env` in the **frontend** directory.
-2. Ensure the API endpoint URL matches your backend configuration.
+1. Ensure the API endpoint URL matches your backend configuration.
 
 ## Usage
 
@@ -116,9 +114,7 @@ blockchain-todo-app/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── assets/
-│   │   └── ...
-│   ├── .env.example
-│   └── ...
+│   │   └── ...   
 └── README.md
 ```
 
@@ -130,7 +126,7 @@ blockchain-todo-app/
 
 ---
 
-## Flow of the Blockchain To-Do List Application
+## Flow of the Blockchain Application
 
 ### 1️⃣ Initialization
 - The application initializes with backend and frontend components.
@@ -158,11 +154,6 @@ blockchain-todo-app/
 - The backend exposes REST API endpoints (`GET /tasks`, `POST /tasks`, `POST /tasks/:id/complete`) for frontend interaction.
 - Rate-limiting and input validation ensure security and prevent spam transactions.
 - The frontend fetches blockchain-stored tasks dynamically and updates in real-time.
-
-### 6️⃣ User Experience & UI Feedback
-- A modern, Wix-inspired UI provides a clean and intuitive task management experience.
-- The application uses loading indicators, animations, and success toasts for smooth UX.
-- Task actions (adding/completing) instantly reflect blockchain changes for real-time updates.
 
 ### 7️⃣ Security & Best Practices
 - All sensitive credentials (RPC URL, private key) are stored securely in environment variables.
