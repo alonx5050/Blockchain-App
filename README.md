@@ -73,7 +73,7 @@ npm install
    PRIVATE_KEY=your_private_key_here
    ```
 
-3. Replace `your_rpc_url_here` and `your_private_key_here` with the actual values provided upon request.
+3. Replace `your_rpc_url_here` and `your_private_key_here` with the actual values provided.
 
 ### Frontend Configuration:
 
