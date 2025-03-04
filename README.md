@@ -106,14 +106,12 @@ blockchain-todo-app/
 ├── backend/
 │   ├── src/
 │   │   ├── controllers/
-│   │   ├── models/
-│   │   └── ...
-│   ├── .env.example
+│   │   └── blockchain/
+│   ├── .env
 │   └── ...
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   ├── assets/
 │   │   └── ...   
 └── README.md
 ```
