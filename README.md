@@ -53,3 +53,79 @@ Follow these instructions to set up and run the application on your local machin
    ```bash
    git clone https://github.com/your_username/blockchain-todo-app.git
    cd blockchain-todo-app
+   ```
+
+## Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+## Frontend Setup
+
+```bash
+cd ../frontend
+npm install
+```
+
+## Configuration
+
+### Backend Configuration:
+
+1. Rename `.env.example` to `.env` in the **backend** directory.
+2. Update the environment variables as needed.
+
+### Frontend Configuration:
+
+1. Rename `.env.example` to `.env` in the **frontend** directory.
+2. Ensure the API endpoint URL matches your backend configuration.
+
+## Usage
+
+### Start the Backend
+
+```bash
+cd backend
+npm start
+```
+
+The backend server will run on [http://localhost:3000](http://localhost:3000).
+
+### Start the Frontend
+
+```bash
+cd frontend
+npm start
+```
+
+Access the application at [http://localhost:3001](http://localhost:3001).
+
+## Project Structure
+
+```plaintext
+blockchain-todo-app/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   └── ...
+│   ├── .env.example
+│   └── ...
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── assets/
+│   │   └── ...
+│   ├── .env.example
+│   └── ...
+└── README.md
+```
+
+## Maintenance
+
+- **Dependencies**: Regularly update npm packages to their latest versions.
+- **Logs**: Monitor backend logs for any errors or warnings.
+- **Security**: Ensure environment variables and sensitive data are secured.
+
+---
